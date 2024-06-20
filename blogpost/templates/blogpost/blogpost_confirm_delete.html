@@ -1,0 +1,16 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <form method="post">
+                {% csrf_token %}
+                <p>Хотите удалить запись"{{ object.title }}"</p>
+                <button type="submit" class="btn btn-bd-primary">Подтвердить</button>
+                <a href="{% url 'blogpost:list' %}" class="btn btn-bd-primary">Отменить</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

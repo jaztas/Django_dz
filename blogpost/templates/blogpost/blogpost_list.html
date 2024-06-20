@@ -1,0 +1,21 @@
+{% extends 'catalog/base.html' %}
+{% load media %}
+
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for object in object_list %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ object.preview_image | media_filter }}">
+                        <div class="card-body">
+                            <h4 class="card-text">{{ object.title}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
